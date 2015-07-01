@@ -11,12 +11,7 @@ The Service has following functions.
 
 #### 1. getListItems(listName, Columns, filters, orderby, top)
 
-The function has five arguments
-  - listName
-  - Columns
-  - filters
-  - orderby
-  - top
+#### Arguments:
 
 ##### listName
 type: `String`
@@ -39,6 +34,8 @@ A Javascript object containing the filter rules
 This will filter out the rows with Title value equal to JavaScript.
 
 #### 2. addListItem(data, listName)
+
+#### Arguments:
 
 ##### data
 type: `Object`
