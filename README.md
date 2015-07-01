@@ -25,6 +25,7 @@ The name of list to fetch data.
 
 ##### Columns
 type: `Array`
+
 An array containing the column names to return. 
 
 #### filter
@@ -37,3 +38,6 @@ A Javascript object containing the filter rules
 
 This will filter out the rows with Title value equal to JavaScript.
 
+### License
+
+MIT License
