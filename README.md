@@ -27,7 +27,7 @@ An array containing the column names to return.
 type: `Object`
 A Javascript object containing the filter rules
 
-**Example**
+*Example*
 
 `{Title:{eq:'JavaScript'}}`
 
