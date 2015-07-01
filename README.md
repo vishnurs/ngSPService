@@ -9,7 +9,7 @@ The Service has following functions.
 3. updateListItem
 4. getGroupUsers 
 
-#### getListItems(listName, Columns, filters, orderby, top)
+#### 1. getListItems(listName, Columns, filters, orderby, top)
 
 The function has five arguments
   - listName
@@ -37,6 +37,24 @@ A Javascript object containing the filter rules
 `{Title:{eq:'JavaScript'}}`
 
 This will filter out the rows with Title value equal to JavaScript.
+
+#### 2. addListItem(data, listName)
+
+##### data
+type: `Object`
+
+An Object containing all the data to be saved to SharePoint List. The key must be column name of the list, make sure it is the internal name of the column.
+
+##### listName
+
+type: `String`
+
+The name of the list to which the data is to be added.
+
+#### 3. updateListItem(data, metadata)
+
+#### 4. getGroupUsers(groupName)
+
 
 ### License
 
