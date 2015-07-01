@@ -31,3 +31,9 @@ An array containing the column names to return.
 type: `Object`
 A Javascript object containing the filter rules
 
+**Example**
+
+`{Title:{eq:'JavaScript'}}`
+
+This will filter out the rows with Title value equal to JavaScript.
+
