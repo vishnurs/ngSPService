@@ -23,7 +23,7 @@ type: `Array`
 
 An array containing the column names to return. 
 
-#### filter
+#### filters
 type: `Object`
 A Javascript object containing the filter rules
 
@@ -32,6 +32,16 @@ A Javascript object containing the filter rules
 `{Title:{eq:'JavaScript'}}`
 
 This will filter out the rows with Title value equal to JavaScript.
+
+#### orderBy
+type: `Array`
+
+An array containing the orderby column name and order.
+
+*Example*
+['Title', 'desc']
+
+If the order is not mentioned, default order applied is `asc`
 
 #### 2. addListItem(data, listName)
 
