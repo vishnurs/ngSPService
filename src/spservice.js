@@ -49,7 +49,7 @@ angular.module('SharePointService', [])
         return $http.get(SP_GLOBAL.WEB_URL + "/_api/web/sitegroups/getbyname('"+groupName+"')/users");
     };
 
-    this.getListItems = function(listName, Columns, filters, orderby, top) {
+    this.getListItems = function(listName, Columns, filters, orderBy, top) {
         var selectString = '';
         if(Columns && Columns instanceof Array) {
             for (i=0; i<Columns.length; i++) {
@@ -73,6 +73,16 @@ angular.module('SharePointService', [])
             }
 
         }
+
+        var orderByString = '';
+        if(orderBy && orderBy instanceof Array) {
+            orderByString = '$orderby=' + orderBy[0];
+            orderByString += orderByString[1] ? ' '+orderByString[1] : ' asc';
+            if(orderByString) {
+                orderByString += '&';
+            }
+        }
+
         var topString = '';
         if(top) {
             topString = '$top=' + top;
