@@ -1,3 +1,7 @@
+(function() {
+
+'use strict';
+
 angular.module('SharePointService', [])
 .service('SPService', ['$http', function ($http) {
     this.addListItem = function (data, listName) {
@@ -31,19 +35,19 @@ angular.module('SharePointService', [])
             },
             data: JSON.stringify(data),
         });
-    }
+    };
 
     this.getUserById = function(uid) {
         return $http.get(SP_GLOBAL.WEB_URL + "/_api/web/getUserById("+uid+")");
-    }
+    };
 
     this.me = function () {
         return $http.get(SP_GLOBAL.WEB_URL + "/_api/SP.UserProfiles.PeopleManager/GetMyProperties");
-    }
+    };
 
     this.getGroupUsers = function(groupName) {
         return $http.get(SP_GLOBAL.WEB_URL + "/_api/web/sitegroups/getbyname('"+groupName+"')/users");
-    }
+    };
 
     this.getListItems = function(listName, Columns, filters, orderby, top) {
         var selectString = '';
@@ -74,9 +78,10 @@ angular.module('SharePointService', [])
             topString = '$top=' + top;
         }
         return $http.get(SP_GLOBAL.WEB_URL + "/_api/web/lists/getByTitle('"+listName+"')/items?" + selectString + filterString + topString);
-    }
+    };
 }])
 .constant( 'SP_GLOBAL', {
     WEB_URL : 'XXXXX',
     REQUEST_DIGEST : document.getElementById( '__REQUESTDIGEST' ).value
 });
+})();
