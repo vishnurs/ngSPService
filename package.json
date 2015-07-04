@@ -1,5 +1,5 @@
 {
-  "name": "SPService",
+  "name": "ngSPService",
   "version": "1.0.0",
   "description": "An AngularJS library to communicate with SharePoint using REST services",
   "main": "index.js",
