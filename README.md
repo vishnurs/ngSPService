@@ -9,7 +9,7 @@ The Service has following functions.
 3. updateListItem
 4. getGroupUsers 
 
-#### 1. getListItems(listName, Columns, filters, orderby, top)
+#### 1. getListItems(listName, Columns, filters, orderBy, top)
 
 #### Arguments:
 
