@@ -60,8 +60,22 @@ The name of the list to which the data is to be added.
 
 #### 3. updateListItem(data, metadata)
 
-#### 4. getGroupUsers(groupName)
+#### Arguments:
 
+##### data
+type: `Object`
+
+An Object containing all the data to be saved to SharePoint List. The key must be column name of the list, make sure it is the internal name of the column.
+
+##### metadata
+type: `object`
+
+An object containing the list `id`, `type` and `etag`
+
+*Example*
+`{id: XXXXX, type: XXXXX, etag: XXXXX}`
+
+#### 4. getGroupUsers(groupName)
 
 ### License
 
