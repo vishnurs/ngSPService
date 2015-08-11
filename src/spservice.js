@@ -17,7 +17,7 @@ angular.module('SharePointService', [])
         });
     };
 
-    this.deleteAttachment = function() {
+    this.deleteAttachment = function(listName, itemID, fileName) {
         return $http({
             method: 'DELETE',
             url: SP_GLOBAL.WEB_URL + "/_api/web/lists/getbytitle('"+listName+"')/items("+itemID+")/AttachmentFiles/add(FileName='"+fileName+"')",
@@ -29,7 +29,7 @@ angular.module('SharePointService', [])
         });
     };
 
-    this.getAttachments = function() {
+    this.getAttachments = function(listName, itemID) {
         return $http({
             method: 'GET',
             url: SP_GLOBAL.WEB_URL + "/_api/web/lists/getbytitle('"+listName+"')/items("+itemID+")/AttachmentFiles",
