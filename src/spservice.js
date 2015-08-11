@@ -4,6 +4,43 @@
 
 angular.module('SharePointService', [])
 .service('SPService', ['$http', function ($http) {
+    this.uploadAttachment = function(listName, itemID, fileName, fileData) {
+        return $http({
+            method: 'POST',
+            url: SP_GLOBAL.WEB_URL + "/_api/web/lists/getbytitle('"+listName+"')/items("+itemID+")/AttachmentFiles/add(FileName='"+fileName+"')",
+            headers: {
+                'Content-Type': 'application/json;odata=verbose',
+                'Accept': 'application/json;odata=verbose',
+                'X-RequestDigest': SP_GLOBAL.REQUEST_DIGEST
+            },
+            data: fileData
+        });
+    };
+
+    this.deleteAttachment = function() {
+        return $http({
+            method: 'DELETE',
+            url: SP_GLOBAL.WEB_URL + "/_api/web/lists/getbytitle('"+listName+"')/items("+itemID+")/AttachmentFiles/add(FileName='"+fileName+"')",
+            headers: {
+                'Content-Type': 'application/json;odata=verbose',
+                'Accept': 'application/json;odata=verbose',
+                'X-RequestDigest': SP_GLOBAL.REQUEST_DIGEST
+            }
+        });
+    };
+
+    this.getAttachments = function() {
+        return $http({
+            method: 'GET',
+            url: SP_GLOBAL.WEB_URL + "/_api/web/lists/getbytitle('"+listName+"')/items("+itemID+")/AttachmentFiles",
+            headers: {
+                'Content-Type': 'application/json;odata=verbose',
+                'Accept': 'application/json;odata=verbose',
+                'X-RequestDigest': SP_GLOBAL.REQUEST_DIGEST
+            }
+        });
+    };
+
     this.addListItem = function (data, listName) {
         data.__metadata = {};
         data.__metadata.type = 'SP.Data.'+listName+'ListItem';
